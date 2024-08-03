@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report a Disaster</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+</head>
+<body>
+
+<header>
+<h1>Report a Disaster</h1>
+<a href="{% url 'index' %}">Homepage</a>
+</header>
+
+<br>
+    <form method="post" enctype="multipart/form-data" onsubmit="showSuccessMessage()">  <!-- Add onsubmit attribute to call JavaScript function -->
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="file" name="image">  <!-- Add file input field for image -->
+        <button type="submit">Submit</button>
+    </form>
+    <br>
+    <br>
+    <br>
+    
+
+    <footer>
+        <p>&copy; 2024 Caleb Udom. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showSuccessMessage() {
+            alert("Your report has been successfully submitted!");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Reports</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+    
+
+</head>
+<body>
+   <header>
+        <h1>Disaster Reports</h1>
+    </header>
+    <a href="{% url 'emergency' %}">Emergency Hotline</a>
+    <a href="{% url 'report' %}">Report a Disaster</a>
+
+    <ul>
+        {% for report in reports %}
+        <li>
+            <p>{{ report.disaster_type }} at {{ report.location }}</p>
+            <p>{{ report.description }}</p>
+            <p>Reported at: {{ report.date_reported|date:"DATETIME_FORMAT" }}</p>
+            {% if report.image %}
+            <img src="{{ report.image.url }}" alt="Image of {{ report.disaster_type }}">
+            {% endif %}
+             {% if report.is_legitimate %}
+                <span class="community-note legitimate">Legitimate</span>
+                {% else %}
+                <span class="community-note fake-news">Fake News</span>
+                {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+
+    <footer>
+        <p>&copy; 2024 Caleb Udom. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+/* General body styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1b1c1d;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Header styling */
+header {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 1rem 0;
+    text-align: center;
+    
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Main content styling */
+main {
+    padding: 2rem;
+}
+
+/* Section styling */
+section {
+    margin-bottom: 2rem;
+}
+
+section h2 {
+    color: #ffffff;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 0.5rem;
+}
+
+/* List styling */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    background: #ffffff;
+    color: #333;
+    margin: 0.5rem 0;
+    padding: 0.75rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+li a:hover {
+    text-decoration: underline;
+}
+
+li strong {
+    color: #333333;
+}
+
+/* Footer styling */
+footer {
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+a {
+    display: block;
+    text-align: center;
+    margin: 20px auto;
+    margin-right: 40px; /* Add left margin */
+    width: 10%; /* Reduce width to 50% */
+    padding: 10px 20px;
+    background-color: #28a745; /* Success green color */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
